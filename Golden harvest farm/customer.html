@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Marketplace - Farm Fresh Connect</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Farm Fresh Connect</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="customer.html">Customer Marketplace</a></li>
+        <li><a href="signin.html">Sign Out</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="marketplace">
+    <h2>Customer Marketplace</h2>
+    <p>Browse fresh produce directly from our farmers.</p>
+
+    <!-- Produce List -->
+    <div class="product-grid" id="marketProduce">
+      <!-- Items will be displayed here -->
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Farm Fresh Connect. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Sample produce (later replace with farmer data)
+    const sampleProduce = [
+      { name: "Tomatoes", qty: "50 kg", price: "3.00/kg" },
+      { name: "Lettuce", qty: "20 bunches", price: "1.50 each" },
+      { name: "Maize", qty: "100 kg", price: "2.50/kg" },
+      { name: "Carrots", qty: "40 kg", price: "2.20/kg" }
+    ];
+
+    const marketProduceDiv = document.getElementById('marketProduce');
+
+    sampleProduce.forEach(item => {
+      const card = document.createElement('div');
+      card.classList.add('product-card');
+      card.innerHTML = `
+        <h3>${item.name}</h3>
+        <p><strong>Quantity:</strong> ${item.qty}</p>
+        <p><strong>Price:</strong> $${item.price}</p>
+        <button>Add to Cart</button>
+      `;
+      marketProduceDiv.appendChild(card);
+    });
+  </script>
+</body>
+</html>

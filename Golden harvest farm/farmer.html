@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farmer Dashboard - Farm Fresh Connect</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Farm Fresh Connect</h1>
+  </header>
+
+  <section class="auth-form">
+    <h2 id="welcomeMessage">Farmer Dashboard</h2>
+    <p>Welcome Farmer! List your fresh produce below.</p>
+
+    <!-- Produce Form -->
+    <form id="produceForm">
+      <input type="text" id="produceName" placeholder="Produce Name (e.g. Tomatoes)" required>
+      <input type="number" id="produceQuantity" placeholder="Quantity (e.g. 50 kg)" required>
+      <input type="text" id="producePrice" placeholder="Price (per kg/item)" required>
+      <input type="url" id="produceImage" placeholder="Image URL of Produce (optional)">
+      <button type="submit">Add Produce</button>
+    </form>
+  </section>
+
+  <!-- Produce List -->
+  <section class="product-list">
+    <h2>My Produce List</h2>
+    <div id="produceList" class="product-grid"></div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Farm Fresh Connect. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+  const form = document.getElementById('produceForm');
+  const produceList = document.getElementById('produceList');
+
+  // Load saved produce if any
+  let products = JSON.parse(localStorage.getItem("products")) || [];
+
+  function displayProducts() {
+    produceList.innerHTML = "";
+    products.forEach((product, index) => {
+      const card = document.createElement('div');
+      card.classList.add('product-card');
+      card.innerHTML = `
+        <img src="${product.image}" alt="${product.name}" class="produce-img">
+        <h3>${product.name}</h3>
+        <p><strong>Quantity:</strong> ${product.quantity}</p>
+        <p><strong>Price:</strong> $${product.price}</p>
+        <button onclick="editProduct(${index})">✏ Edit</button>
+        <button onclick="deleteProduct(${index})">🗑 Delete</button>
+      `;
+      produceList.appendChild(card);
+    });
+  }
+
+  displayProducts();
+
+  // Add new produce
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const product = {
+      name: document.getElementById('produceName').value,
+      quantity: document.getElementById('produceQuantity').value,
+      price: document.getElementById('producePrice').value,
+      image: document.getElementById('produceImage').value || "https://via.placeholder.com/150"
+    };
+
+    products.push(product);
+    localStorage.setItem("products", JSON.stringify(products));
+
+    displayProducts();
+    form.reset();
+  });
+
+  // Delete a product
+  function deleteProduct(index) {
+    products.splice(index, 1);
+    localStorage.setItem("products", JSON.stringify(products));
+    displayProducts();
+  }
+
+  // Edit a product
+  function editProduct(index) {
+    const product = products[index];
+
+    // Fill form with existing data
+    document.getElementById('produceName').value = product.name;
+    document.getElementById('produceQuantity').value = product.quantity;
+    document.getElementById('producePrice').value = product.price;
+    document.getElementById('produceImage').value = product.image;
+
+    // Remove old product before saving again
+    products.splice(index, 1);
+    localStorage.setItem("products", JSON.stringify(products));
+    displayProducts();
+  }
+</script>
+</body>
+</html>

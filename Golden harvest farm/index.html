@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<header>
+  <div class="header-container">
+    <!-- Logo / Brand -->
+    <div class="logo">
+      <span>Farm Fresh Connect</span>
+      <link rel="stylesheet" href="style.css">
+    </div>
+
+<body>
+ <!-- Navigation Menu -->
+    <nav id="navbar">
+      <ul class="nav-links">
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <ul class="nav-right">
+                <li><a href="signin.html">Sign In</a></li>
+                <li><a href="signup.html" class="signup-btn">Sign Up</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Cart Modal -->
+<div id="cart-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="close-cart">&times;</span>
+    <h2>Your Cart</h2>
+    <ul id="cart-items"></ul>
+    <p><strong>Total: $<span id="cart-total">0.00</span></strong></p>
+    <button id="checkout-btn">Checkout</button>
+  </div>
+</div>
+
+<section id="hero">
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <h2>Fresh, Organic, and Local</h2>
+      <p>Bringing the best harvest from our farm to your table.</p>
+      <a href="#products" class="btn">Explore Our Products</a>
+    </div>
+  </div>
+</section>
+
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Farm Fresh Connect is dedicated to sustainable farming and providing fresh, organic produce to our community. We grow a variety of fruits, vegetables, and herbs with care and passion.</p>
+    </section>
+
+    <section id="products">
+  <h2>Our Products</h2>
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="file:///C:/Users/USER/Desktop/Farm/Untitled.jpeg" alt="Fresh Tomatoes">
+      <h3>Fresh Tomatoes</h3>
+      <p>Juicy and organic, straight from the farm.</p>
+      <p class="price">GH$ 29.99 / kg</p>
+      <button class="add-to-cart" data-name="Fresh Tomatoes" data-price="30">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="file:///C:/Users/USER/Desktop/Farm/9.jpeg" alt="Green Lettuce">
+      <h3>Green Lettuce</h3>
+      <p>Crisp, fresh, and packed with nutrients.</p>
+      <p class="price">GH$ 19.99 / bunch</p>
+      <button class="add-to-cart" data-name="Green Lettuce" data-price="20">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="file:///C:/Users/USER/Desktop/Farm/Untitled%2011.jpeg" alt="Fresh Herbs">
+      <h3>Herbs</h3>
+      <p>Basil, mint, parsley, and more for your kitchen.</p>
+      <p class="price">GH$ 14.99 / bunch</p>
+      <button class="add-to-cart" data-name="Herbs" data-price="15">Add to Cart</button>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <h2>What Our Customers Say</h2>
+  <div class="testimonial-container">
+    <div class="testimonial-card">
+      <p>"The freshest tomatoes I’ve ever had! Golden Harvest Farm never disappoints."</p>
+      <h4>- Sarah, Accra</h4>
+    </div>
+    <div class="testimonial-card">
+      <p>"I love their herbs. The basil and mint taste amazing in my cooking."</p>
+      <h4>- Daniel, Kumasi</h4>
+    </div>
+    <div class="testimonial-card">
+      <p>"Friendly service, organic produce, and quick delivery. Highly recommend!"</p>
+      <h4>- Ama, Cape Coast</h4>
+    </div>
+  </div>
+</section>
+
+    <footer>
+  <div class="footer-container">
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Media -->
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="images/whatsapp.png" alt="WhatsApp"></a>
+      </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="footer-section">
+      <h3>Newsletter</h3>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+  <section id="contact">
+  <h2>Contact Us</h2>
+  <p>We’d love to hear from you! Visit us at our farm or reach out online.</p>
+
+  <div class="contact-container">
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <p><strong>Address:</strong> Golden Harvest Farm, Kumasi, Ghana</p>
+      <p><strong>Email:</strong> info@goldenharvestfarm.com</p>
+      <p><strong>Phone:</strong> +233 59 477 2444</p>
+    </div>
+
+    <!-- Google Map Embed -->
+    <div class="map-container">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3978.79803437515!2d-1.6244!3d6.6915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwNDEnMjkuNCJOIDEgwrA0Mic1MS44Ilc!5e0!3m2!1sen!2sgh!4v1692787890123!5m2!1sen!2sgh"
+        width="100%" 
+        height="350" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+</body>
+  <p class="footer-bottom">&copy; 2025 Farm Fresh Connect. All Rights Reserved.</p>
+</footer>
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - Farm Fresh Connect</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Farm Fresh Conect</h1>
+  </header>
+  <section class="auth-form">
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+      <input type="text" id="fullName" placeholder="Full Name" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <input type="confirm password" id="confirm password"  placeholder="Confirm Password" required>
+      <input type="number" id="phone number"  placeholder="Phone Number" required>
+
+
+      <!-- User Role Selection -->
+      <label for="role">I am a:</label>
+      <select id="role" name="role" required>
+        <option value="">-- Select --</option>
+        <option value="farmer">Farmer</option>
+        <option value="customer">Customer</option>
+      </select>
+
+      <button type="submit">Sign Up</button>
+    </form>
+    <p>Already have an account? <a href="signin.html">Sign In</a></p>
+  </section>
+
+<script>
+  const form = document.querySelector("form");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const fullName = form.querySelector("input[placeholder='Full Name']").value;
+    const email = form.querySelector("input[placeholder='Email']").value;
+    const password = form.querySelector("input[placeholder='Password']").value;
+    const  confirm password = form.querySelector("input[placeholder='Confirm Password']").value;
+    const number = form.querySelector("input[placeholder='Phone Number']").value;
+    const role = document.getElementById("role").value;
+
+    if (!role) {
+      alert("Please select Farmer or Customer");
+      return;
+    }
+
+    // Save user data
+    localStorage.setItem("fullName", fullName);
+    localStorage.setItem("email", email);
+    localStorage.setItem("password", password); // ⚠ Not secure in real apps
+    localStorage.setItem("role", role);
+
+    alert("Sign up successful!");
+
+    // Redirect based on role
+    if (role === "farmer") {
+      window.location.href = "farmer.html";
+    } else {
+      window.location.href = "customer.html";
+    }
+  });
+</script>
+</body>
+</html>
