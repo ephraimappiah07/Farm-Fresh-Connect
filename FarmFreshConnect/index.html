@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Farm Fresh Connect</title>
+  <meta name="description" content="Connects local farmers and buyers — fresh produce delivered directly from the farm." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">Farm Fresh Connect</a>
+      <nav class="nav" id="nav">
+        <a href="#home">Home</a>
+        <a href="#market">Market</a>
+        <a href="#farmers">Farmers</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="btn small">Contact</a>
+
+        <div class="auth-buttons">
+            <a href="signin.html" class="button small ghost">Sign In</a>
+            <a href="signup.html" class="button small">Sign Up</a>
+        </div>
+      </nav>
+
+      <button id="nav-toggle" aria-label="Toggle navigation" class="nav-toggle">
+        ☰
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1>Farm Fresh Connect</h1>
+          <p>Bringing fresh, locally-grown produce from farmers to your table — fast, fair, and transparent.</p>
+          <div class="hero-cta">
+            <a href="#market" class="btn">Shop Market</a>
+            <a href="#farmers" class="btn ghost">Meet Farmers</a>
+          </div>
+
+          <ul class="trust-list">
+            <li>Direct from farms</li>
+            <li>Daily deliveries</li>
+            <li>Fair prices for farmers</li>
+          </ul>
+        </div>
+
+        <div class="hero-media" aria-hidden="false">
+          <img src="04.jpeg" alt="Fresh produce in crates"/>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARKET / PRODUCTS -->
+    <section id="market" class="section">
+      <div class="container">
+        <h2>Market</h2>
+        <p class="muted">Fresh picks — updated daily. Click a product to view quick details.</p>
+
+        <div id="product-grid" class="product-grid">
+          <!-- Example product card template -->
+          <article class="product-card" data-id="1">
+            <img src="01.jpeg" alt="Tomatoes" />
+            <div class="card-body">
+              <h3>Vine Tomatoes</h3>
+              <p class="price">GHS 10 / bag</p>
+              <p class="card-desc">Locally grown, ripe red tomatoes.</p>
+              <div class="card-actions">
+                <button class="btn small add-cart">Add to cart</button>
+                <button class="btn ghost small view-details">Details</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-id="2">
+            <img src="02.jpeg" alt="Leafy greens" />
+            <div class="card-body">
+              <h3>Organic Spinach</h3>
+              <p class="price">GHS 6 / bunch</p>
+              <p class="card-desc">Hand-harvested, pesticide-free.</p>
+              <div class="card-actions">
+                <button class="btn small add-cart">Add to cart</button>
+                <button class="btn ghost small view-details">Details</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-id="3">
+            <img src="03.jpeg" alt="Plantains" />
+            <div class="card-body">
+              <h3>Ripe Plantain</h3>
+              <p class="price">GHS 8 / bunch</p>
+              <p class="card-desc">Sweet and ready to cook.</p>
+              <div class="card-actions">
+                <button class="btn small add-cart">Add to cart</button>
+                <button class="btn ghost small view-details">Details</button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FARMERS -->
+    <section id="farmers" class="section alt">
+      <div class="container">
+        <h2>Meet the Farmers</h2>
+        <p class="muted">Stories and practices behind the produce.</p>
+
+        <div class="farmers-grid">
+          <figure class="farmer">
+            <img src="07.jpeg" alt="Farmer portrait"/>
+            <figcaption>
+              <strong>Kwame Mensah</strong>
+              <span>Tomato & vegetable farmer — Brong-Ahafo</span>
+            </figcaption>
+          </figure>
+
+          <figure class="farmer">
+            <img src="05.jpeg" alt="Farmer portrait"/>
+            <figcaption>
+              <strong>Aisha Sule</strong>
+              <span>Plantain & cassava — Volta</span>
+            </figcaption>
+          </figure>
+
+          <figure class="farmer">
+            <img src="06.jpeg" alt="Farmer portrait"/>
+            <figcaption>
+              <strong>Daniel Oteng</strong>
+              <span>Leafy greens & herbs — Ashanti</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container narrow">
+        <h2>About Farm Fresh Connect</h2>
+        <p>Farm Fresh Connect is a platform dedicated to connecting smallholder farmers with local buyers, restaurants, and markets. Our mission is to increase farmer income, reduce food miles, and give customers fresher produce at fair prices.</p>
+
+        <div class="values">
+          <div>
+            <h4>Fair Trade</h4>
+            <p>Transparent pricing so farmers get paid fairly.</p>
+          </div>
+          <div>
+            <h4>Sustainability</h4>
+            <p>Support for agroecological practices that protect soil and water.</p>
+          </div>
+          <div>
+            <h4>Community</h4>
+            <p>Training, cooperative-building and direct-market access.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section alt">
+      <div class="container narrow">
+        <h2>Contact / Partner With Us</h2>
+        <p class="muted">Questions about supply, partnerships, or placing a large order? Send us a message.</p>
+
+        <form id="contact-form" class="contact-form" novalidate>
+          <div class="form-row">
+            <label>
+              Your name
+              <input type="text" name="name" id="name" required />
+            </label>
+
+            <label>
+              Email
+              <input type="email" name="email" id="email" required />
+            </label>
+          </div>
+
+          <label>
+            Message
+            <textarea name="message" id="message" rows="5" required></textarea>
+          </label>
+
+          <div class="form-actions">
+            <button type="submit" class="btn">Send Message</button>
+            <button type="button" id="clear-btn" class="btn ghost">Clear</button>
+          </div>
+
+          <p id="form-status" class="muted small" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>Farm Fresh Connect</strong>
+        <p class="muted small">Connecting farmers & buyers since 2025</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#market">Market</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <footer>
+    <p>© 2025 FarmFresh Connect. All rights reserved.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

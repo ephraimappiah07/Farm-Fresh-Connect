@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Sign In - Farm Fresh Connect</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Farm Fresh Connect</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container narrow">
+        <h2>Sign In</h2>
+        <p class="muted">Choose whether you’re signing in as a farmer or a customer.</p>
+
+        <form id="signin-form" class="contact-form" novalidate>
+          <label>
+            Email
+            <input type="email" id="email" required>
+          </label>
+
+          <label>
+            Password
+            <input type="password" id="password" required>
+          </label>
+
+          <label>
+            Sign in as
+            <select id="role" required>
+              <option value="">-- Select Role --</option>
+              <option value="farmer">Farmer</option>
+              <option value="customer">Customer</option>
+            </select>
+          </label>
+
+          <div class="form-actions">
+            <button type="submit" class="btn">Sign In</button>
+          </div>
+          <p id="signin-status" class="muted small" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById('signin-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const role = document.getElementById('role').value;
+      const status = document.getElementById('signin-status');
+
+      if (!role) {
+        status.textContent = 'Please select a role.';
+        status.style.color = 'crimson';
+        return;
+      }
+
+      // Simulate login success
+      status.textContent = 'Signing in...';
+
+      setTimeout(() => {
+        if (role === 'farmer') {
+          window.location.href = 'farmer.html';
+        } else {
+          window.location.href = 'customer.html';
+        }
+      }, 800);
+    });
+  </script>
+</body>
+</html>

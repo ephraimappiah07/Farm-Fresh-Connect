@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Farm Fresh Connect</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+ <header>
+    <h1>Farm Fresh Connect</h1>
+  </header>
+
+  <section class="auth-form">
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+
+      <!-- Role Selection -->
+      <label for="role">I am a:</label>
+      <select id="role" name="role" required>
+        <option value="">-- Select --</option>
+        <option value="farmer">Farmer</option>
+        <option value="customer">Customer</option>
+      </select>
+
+      <button type="submit">Sign Up</button>
+    </form>
+    <p>Already have an account? <a href="signin.html">Sign In</a></p>
+  </section>
+
+  <script>
+    const signupForm = document.getElementById('signupForm');
+    signupForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const role = document.getElementById('role').value;
+
+      if (role === "farmer") {
+        window.location.href = "farmer.html"; // Redirect to farmer page
+      } else if (role === "customer") {
+        window.location.href = "customer.html"; // Redirect to customer page
+      } else {
+        alert("Please select a role before signing up.");
+      }
+    });
+  </script>
+</body>
+</html>   
+</body>
+</html>

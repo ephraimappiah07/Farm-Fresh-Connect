@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Farmer Dashboard - Farm Fresh Connect</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Farm Fresh Connect</a>
+      <a href="signin.html" class="btn small ghost">Log Out</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container narrow">
+        <h2>Farmer Dashboard</h2>
+        <p class="muted">Add your farm products with images or URLs. They’ll be saved locally in your browser.</p>
+
+        <form id="farmer-form" class="contact-form">
+          <label>
+            Product Name
+            <input type="text" id="product-name" required />
+          </label>
+
+          <label>
+            Price (GHS)
+            <input type="number" id="product-price" required />
+          </label>
+
+          <label>
+            Description
+            <textarea id="product-desc" rows="3" required></textarea>
+          </label>
+
+          <label>
+            Image URL (or leave blank to upload)
+            <input type="url" id="product-img-url" placeholder="https://example.com/image.jpg" />
+          </label>
+
+          <label>
+            Or Upload Image
+            <input type="file" id="product-img-file" accept="image/*" />
+          </label>
+
+          <div class="form-actions">
+            <button type="submit" class="btn">Add Product</button>
+          </div>
+        </form>
+
+        <h3>My Products</h3>
+        <div id="product-list" class="product-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="farmer.js"></script>
+</body>
+</html>
